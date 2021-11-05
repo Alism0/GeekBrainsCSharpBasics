@@ -24,13 +24,7 @@ namespace GeekBrainsCSharpBasics
 
         public static void InputData<TInputData>(this TInputData inputData) where TInputData : IInputData
         {
-            Type inputDataType = inputData.GetType();
-            InputDescriptionAttribute inputDescription = inputDataType.GetCustomAttribute<InputDescriptionAttribute>();
-            PrintDescription(inputDescription);
-            Console.WriteLine();
-
-            PropertyInfo[] properties = inputDataType.GetProperties();
-
+            PropertyInfo[] properties = inputData.GetType().GetProperties();
             List<InputPropertyDescription> inputPropertyDescriptions = new List<InputPropertyDescription>();
             foreach (PropertyInfo property in properties)
             {
@@ -80,7 +74,7 @@ namespace GeekBrainsCSharpBasics
                 });
         }
 
-        public static string GetValueWithDescription(this IInputData inputData, string propertyName)
+        public static string FormatPropertyValue(this IInputData inputData, string propertyName)
         {
             PropertyInfo property = inputData.GetType().GetProperty(propertyName);
             if (property == null)
@@ -100,6 +94,27 @@ namespace GeekBrainsCSharpBasics
                 return $"{description}{value?.ToString(format)}";
 
             return $"{description}{value?.ToString()}";
+        }
+
+        public static void PrintDescription(this IInputData inputData)
+        {
+            Type inputDataType = inputData.GetType();
+            InputDescriptionAttribute inputDescription = inputDataType.GetCustomAttribute<InputDescriptionAttribute>();
+            PrintDescription(inputDescription);
+        }
+
+        public static int InputEnum<TEnum>(this int _) where TEnum : struct
+        {
+            int enumValue = default;
+            enumValue = enumValue.InputValue();
+
+            while (!Enum.IsDefined(typeof(TEnum), enumValue))
+            {
+                Console.WriteLine("Незарегистрированный тип");
+                enumValue = enumValue.InputValue();
+            }
+
+            return enumValue;
         }
 
         private static void ParseInputValue(Func<string, bool> checkValue)

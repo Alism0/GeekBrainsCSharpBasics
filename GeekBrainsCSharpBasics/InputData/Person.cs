@@ -1,4 +1,4 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
+﻿namespace GeekBrainsCSharpBasics
 {
     public class Person : IInputData
     {

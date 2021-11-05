@@ -2,12 +2,14 @@
 
 namespace GeekBrainsCSharpBasics
 {
-    [AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Property, Inherited = true)]
     public class InputDescriptionPropertyAttribute : InputDescriptionAttribute
     {
         public string Format { get; set; }
 
         public int Order { get; set; }
+
+        public InputDescriptionPropertyAttribute() : base() { }
 
         public InputDescriptionPropertyAttribute(string description) : base(description)
         {

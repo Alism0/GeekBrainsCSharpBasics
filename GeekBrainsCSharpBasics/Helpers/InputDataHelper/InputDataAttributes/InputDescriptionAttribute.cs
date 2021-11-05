@@ -7,6 +7,8 @@ namespace GeekBrainsCSharpBasics
     {
         public string Description { get; set; }
 
+        public InputDescriptionAttribute() { }
+
         public InputDescriptionAttribute(string description)
         {
             Description = description;

@@ -11,7 +11,7 @@ namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
             Human human = new Human();
 
             SetFontColorByConcatenationKind(concatenationKind);
-
+            human.PrintDescription();
             human.InputData();
 
             Console.WriteLine();
@@ -42,11 +42,11 @@ namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
 
         private static void PrintInterpolationOutput(Human human)
         {
-            string name = $"{human.GetValueWithDescription(nameof(human.Name))}{Environment.NewLine}";
-            string surname = $"{human.GetValueWithDescription(nameof(human.Surname))}{Environment.NewLine}";
-            string age = $"{human.GetValueWithDescription(nameof(human.Age))}{Environment.NewLine}";
-            string height = $"{human.GetValueWithDescription(nameof(human.Height))}{Environment.NewLine}";
-            string weight = $"{human.GetValueWithDescription(nameof(human.Weight))}";
+            string name = $"{human.FormatPropertyValue(nameof(human.Name))}{Environment.NewLine}";
+            string surname = $"{human.FormatPropertyValue(nameof(human.Surname))}{Environment.NewLine}";
+            string age = $"{human.FormatPropertyValue(nameof(human.Age))}{Environment.NewLine}";
+            string height = $"{human.FormatPropertyValue(nameof(human.Height))}{Environment.NewLine}";
+            string weight = $"{human.FormatPropertyValue(nameof(human.Weight))}";
 
             Console.WriteLine($"{name}{surname}{age}{height}{weight}");
         }
