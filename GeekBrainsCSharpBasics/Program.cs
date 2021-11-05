@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GeekBrainsCSharpBasics.Lesson1;
 
 namespace GeekBrainsCSharpBasics
 {
@@ -10,6 +6,8 @@ namespace GeekBrainsCSharpBasics
     {
         static void Main(string[] args)
         {
+            Lesson1Helper.RunExercise1();
+            ConsoleHelper.CloseApplication();
         }
     }
 }
