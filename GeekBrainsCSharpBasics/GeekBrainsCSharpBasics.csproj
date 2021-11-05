@@ -44,19 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\ConsoleHelper.cs" />
-    <Compile Include="Lesson1\Exercise11\InputData\Human.cs" />
+    <Compile Include="Lesson1\Exercise1\InputData\Human.cs" />
     <Compile Include="InputData\InputDataModels\IInputData.cs" />
     <Compile Include="InputData\InputDataModels\IInputDescription.cs" />
     <Compile Include="InputData\InputDataExtensions.cs" />
     <Compile Include="InputData\InputDataAttributes\InputDescriptionAttribute.cs" />
     <Compile Include="InputData\InputDataAttributes\InputDescriptionPropertyAttribute.cs" />
     <Compile Include="InputData\InputDataModels\InputPropertyDescription.cs" />
-    <Compile Include="Lesson1\Lesson1Helper.cs" />
-    <Compile Include="Lesson1\Exercise11\Lesson11OutputTypes.cs" />
+    <Compile Include="Lesson1\Lesson1Starter.cs" />
+    <Compile Include="Lesson1\Exercise1\OutputConcatenationKinds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Lesson1\Exercise11\InputData\Person.cs" />
-    <Compile Include="Lesson1\Exercise11\UserFormService.cs" />
+    <Compile Include="Lesson1\Exercise1\InputData\Person.cs" />
+    <Compile Include="Lesson1\Exercise1\UserFormService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

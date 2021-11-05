@@ -6,7 +6,8 @@ namespace GeekBrainsCSharpBasics
     {
         static void Main(string[] args)
         {
-            Lesson1Helper.RunExercise1();
+            Lesson1Starter.RunExercise1();
+
             ConsoleHelper.CloseApplication();
         }
     }

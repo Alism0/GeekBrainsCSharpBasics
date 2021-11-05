@@ -1,28 +1,28 @@
 ﻿using System;
 
-namespace GeekBrainsCSharpBasics.Lesson1
+namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
 {
     public class UserFormService
     {
         private const string PrintOutputTemplate = "{0}{1}{2}{3}{4}";
 
-        public void RunUserForm(Lesson11OutputTypes outputTypes)
+        public void RunUserForm(OutputConcatenationKinds concatenationKind)
         {
             Human human = new Human();
 
-            SetColorByOutputType(outputTypes);
+            SetFontColorByConcatenationKind(concatenationKind);
 
             human.InputData();
 
             Console.WriteLine();
             Console.WriteLine($"Вывод данных о пользователе:");
 
-            switch (outputTypes)
+            switch (concatenationKind)
             {
-                case Lesson11OutputTypes.Concatenation:
+                case OutputConcatenationKinds.Concatenation:
                     PrintConcatenationOutput(human);
                     break;
-                case Lesson11OutputTypes.Format:
+                case OutputConcatenationKinds.Format:
                     PrintFormatOutput(human);
                     break;
                 default:
@@ -51,11 +51,11 @@ namespace GeekBrainsCSharpBasics.Lesson1
             Console.WriteLine($"{name}{surname}{age}{height}{weight}");
         }
 
-        private static void SetColorByOutputType(Lesson11OutputTypes outputTypes)
+        private static void SetFontColorByConcatenationKind(OutputConcatenationKinds concatenationKind)
         {
-            switch (outputTypes)
+            switch (concatenationKind)
             {
-                case Lesson11OutputTypes.Interpolation:
+                case OutputConcatenationKinds.Interpolation:
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     break;
             }
