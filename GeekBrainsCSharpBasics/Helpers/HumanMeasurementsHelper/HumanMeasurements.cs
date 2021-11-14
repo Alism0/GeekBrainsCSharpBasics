@@ -1,7 +1,7 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson1.Exercise2
+﻿namespace GeekBrainsCSharpBasics
 {
     [InputDescription("Для расчета ИМТ введите данные:\r\n")]
-    public class HumanMeasurements: IInputData
+    public class HumanMeasurements : IInputData
     {
         [InputDescriptionProperty("Рост: ", 0)]
         public int Height { get; set; }

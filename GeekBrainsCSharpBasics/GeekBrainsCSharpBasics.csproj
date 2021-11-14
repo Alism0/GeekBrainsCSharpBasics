@@ -44,11 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExerciseStarter.cs" />
+    <Compile Include="Helpers\CalculationHelper.cs" />
+    <Compile Include="Helpers\HumanMeasurementsHelper\BodyMassIndexAnalysisInfo.cs" />
+    <Compile Include="Helpers\InputDataHelper\InputDataAttributes\MenuDescriptionAttribute.cs" />
     <Compile Include="Helpers\ConsoleHelper.cs" />
-    <Compile Include="Helpers\FormulasHelper.cs" />
-    <Compile Include="Helpers\InputDataHelper.cs" />
-    <Compile Include="InputData\Exercises.cs" />
-    <Compile Include="InputData\Lessons.cs" />
+    <Compile Include="Helpers\Operations\ITwoValuesOperation.cs" />
+    <Compile Include="Helpers\Operations\NumberRangeSumOperation.cs" />
+    <Compile Include="Helpers\Operations\OperationFactory.cs" />
+    <Compile Include="Helpers\Stopwatch.cs" />
+    <Compile Include="InputData\Enums\Exercises.cs" />
+    <Compile Include="InputData\Enums\Lessons.cs" />
     <Compile Include="Lesson1\Exercise1\InputData\Human.cs" />
     <Compile Include="Helpers\InputDataHelper\InputDataModels\IInputData.cs" />
     <Compile Include="Helpers\InputDataHelper\InputDataModels\IInputDescription.cs" />
@@ -56,17 +61,19 @@
     <Compile Include="Helpers\InputDataHelper\InputDataAttributes\InputDescriptionAttribute.cs" />
     <Compile Include="Helpers\InputDataHelper\InputDataAttributes\InputDescriptionPropertyAttribute.cs" />
     <Compile Include="Helpers\InputDataHelper\InputDataModels\InputPropertyDescription.cs" />
-    <Compile Include="Lesson1\Exercise2\HumanMeasurementsHelper.cs" />
-    <Compile Include="Lesson1\Exercise2\HumanMeasurements.cs" />
+    <Compile Include="Helpers\HumanMeasurementsHelper\HumanMeasurementsHelper.cs" />
+    <Compile Include="Helpers\HumanMeasurementsHelper\HumanMeasurements.cs" />
     <Compile Include="InputData\Point.cs" />
     <Compile Include="InputData\IntValue.cs" />
     <Compile Include="Lesson1\Lesson1Starter.cs" />
     <Compile Include="Lesson1\Exercise1\InputData\OutputConcatenationKinds.cs" />
     <Compile Include="Lesson1\MyPersonDataConstants.cs" />
+    <Compile Include="Lesson2\Lesson2Starter.cs" />
+    <Compile Include="Lesson2\AuthenticationForm.cs" />
     <Compile Include="LessonStarter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InputData\Person.cs" />
+    <Compile Include="Lesson1\Exercise1\InputData\Person.cs" />
     <Compile Include="Lesson1\Exercise1\UserFormService.cs" />
   </ItemGroup>
   <ItemGroup>

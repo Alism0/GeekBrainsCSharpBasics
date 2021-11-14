@@ -19,13 +19,18 @@ namespace GeekBrainsCSharpBasics
 
         public static void CloseApplication()
         {
+            if (ReadKeyYesNoValue("Закрыть приложение? (Y/N): "))
+                Environment.Exit(0);
+        }
+
+        public static bool ReadKeyEnter(string message)
+        {
             do
             {
-                Console.WriteLine($"Нажмите {ConsoleKey.Enter} для выхода из приложения");
-
+                Console.WriteLine(message);
                 int currentLine = Console.CursorTop;
                 if (Console.ReadKey().Key == ConsoleKey.Enter)
-                    Environment.Exit(0);
+                    return true;
 
                 Console.SetCursorPosition(0, currentLine);
             }
@@ -50,6 +55,28 @@ namespace GeekBrainsCSharpBasics
             IntValue value = new IntValue();
             value.InputData();
             return value.Value;
+        }
+
+        public static bool ReadKeyYesNoValue(string message)
+        {
+            Console.Write(message);
+            int currentLine = Console.CursorTop;
+            do
+            {
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.Y:
+                        Console.WriteLine();
+                        return true;
+                    case ConsoleKey.N:
+                        Console.WriteLine();
+                        return false;
+                    default:
+                        Console.SetCursorPosition(0, currentLine);
+                        break;
+                }
+            }
+            while (true);
         }
 
         public static void PrintByCenter(string value)
