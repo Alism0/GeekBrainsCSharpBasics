@@ -2,6 +2,8 @@
 {
     public enum Lessons
     {
-        Lesson1 = 1
+        Lesson1 = 1,
+
+        Lesson2 = 2
     }
 }

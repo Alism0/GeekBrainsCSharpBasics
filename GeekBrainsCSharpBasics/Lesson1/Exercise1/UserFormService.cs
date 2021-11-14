@@ -30,7 +30,6 @@ namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
                     break;
             }
 
-            ConsoleHelper.PauseAndClear();
             Console.ResetColor();
         }
 
