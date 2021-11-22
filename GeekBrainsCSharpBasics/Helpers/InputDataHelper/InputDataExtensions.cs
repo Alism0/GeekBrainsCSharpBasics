@@ -117,6 +117,20 @@ namespace GeekBrainsCSharpBasics
             return enumValue;
         }
 
+        public static TEnum InputEnum<TEnum>(this TEnum _) where TEnum : Enum
+        {
+            int enumValue = default;
+            enumValue = enumValue.InputValue();
+
+            while (!Enum.IsDefined(typeof(TEnum), enumValue))
+            {
+                Console.WriteLine("Незарегистрированный тип");
+                enumValue = enumValue.InputValue();
+            }
+
+            return (TEnum)Enum.Parse(typeof(TEnum), enumValue.ToString());
+        }
+
         private static void ParseInputValue(Func<string, bool> checkValue)
         {
             do

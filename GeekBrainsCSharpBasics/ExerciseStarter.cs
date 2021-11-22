@@ -5,29 +5,17 @@ namespace GeekBrainsCSharpBasics
 {
     public abstract class ExerciseStarter
     {
-        protected abstract Dictionary<Exercises, Action> LessonExercises { get; }
+        protected abstract Dictionary<Exercise, Action> LessonExercises { get; }
 
         public void RunExercises()
         {
             do
             {
-
                 Console.WriteLine("Выберите задание: ");
-                foreach (Exercises exerciseKey in LessonExercises.Keys)
-                {
-                    ConsoleHelper.PrintItem((int)exerciseKey, exerciseKey.ToString());
-                }
-
-                int exercise = default;
-                exercise = exercise.InputEnum<Exercises>();
-                while (!LessonExercises.ContainsKey((Exercises)exercise))
-                {
-                    Console.WriteLine("Незарегистрированный тип");
-                    exercise = exercise.InputEnum<Exercises>();
-                }
+                Exercise exercise = ConsoleHelper.InputMenuItems(LessonExercises.Keys);
 
                 Console.Clear();
-                LessonExercises[(Exercises)exercise]();
+                LessonExercises[exercise]();
                 ConsoleHelper.PauseAndClear();
             } while (true);
         }
