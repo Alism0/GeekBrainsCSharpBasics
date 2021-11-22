@@ -12,20 +12,14 @@ namespace GeekBrainsCSharpBasics.Lesson3
         #region Функции запуска заданий
 
         protected override Dictionary<Exercise, Action> LessonExercises => new Dictionary<Exercise, Action>() {
-            { Exercise.Exercise1, () => RunExercise1() },
+            { Exercise.Exercise1, () => new ComplexNumberCalculator().Calculate() },
             { Exercise.Exercise2, () => ExercisesHelper.GetPositiveOddNumbersSum() },
-            { Exercise.Exercise3, () => RunExercise3() },
-            { Exercise.Exit, () => ConsoleHelper.CloseApplication() }
+            { Exercise.Exercise3, () => new RationalNumberCalculator().Calculate() },
+            { Exercise.Exit, () => ConsoleManager.CloseApplication() }
         };
 
         #endregion
 
         private Lesson3Starter() { }
-
-        private static void RunExercise1() =>
-            new ComplexNumberCalculator().Calculate();
-
-        private static void RunExercise3() =>
-            new RationalNumberCalculator().Calculate();
     }
 }

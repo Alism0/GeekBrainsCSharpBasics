@@ -22,7 +22,7 @@ namespace GeekBrainsCSharpBasics.Lesson3
             INumber<TNumber> secondNumber = InputNumber();
 
             Console.WriteLine("Выберите операцию:");
-            ArithmeticOperation operation = ConsoleHelper.InputMenuItems(Operations.Keys);
+            ArithmeticOperation operation = ConsoleManager.InputMenuItems(Operations.Keys);
             INumber<TNumber> operationResult = Operations[operation].Operation(firstNumber, secondNumber);
 
             Console.WriteLine();

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace GeekBrainsCSharpBasics.Lesson2
+namespace GeekBrainsCSharpBasics
 {
-    public class AuthenticationForm : IInputData, IEquatable<AuthenticationForm>
+    public class AuthenticationForm : IInputData, IEquatable<IAccount>, IAccount
     {
         [InputDescriptionProperty("Введите логин: ", 0)]
         public string Login { get; set; }
@@ -10,7 +10,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
         [InputDescriptionProperty("Введите пароль: ", 1)]
         public string Password { get; set; }
 
-        public bool Equals(AuthenticationForm other) =>
+        public bool Equals(IAccount other) =>
             Login == other.Login && Password == other.Password;
     }
 }

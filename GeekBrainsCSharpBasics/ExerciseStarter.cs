@@ -12,11 +12,11 @@ namespace GeekBrainsCSharpBasics
             do
             {
                 Console.WriteLine("Выберите задание: ");
-                Exercise exercise = ConsoleHelper.InputMenuItems(LessonExercises.Keys);
+                Exercise exercise = ConsoleManager.InputMenuItems(LessonExercises.Keys);
 
                 Console.Clear();
                 LessonExercises[exercise]();
-                ConsoleHelper.PauseAndClear();
+                ConsoleManager.PauseAndClear();
             } while (true);
         }
     }
