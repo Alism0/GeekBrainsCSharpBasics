@@ -7,7 +7,6 @@ namespace GeekBrainsCSharpBasics.Lesson2
     public sealed class Lesson2Starter : ExerciseStarter
     {
         private const int NumberCount = 3;
-        private const int AuthenticationAttemptsCount = 3;
         private const int MinGoodNumber = 0;
         private const int MaxGoodNumber = 1_000_000_000;
 
@@ -27,11 +26,11 @@ namespace GeekBrainsCSharpBasics.Lesson2
             { Exercise.Exercise1, () => RunExercise1() },
             { Exercise.Exercise2, () => RunExercise2() },
             { Exercise.Exercise3, () => ExercisesHelper.GetPositiveOddNumbersSum() },
-            { Exercise.Exercise4, () => RunExercise4() },
+            { Exercise.Exercise4, () => ExercisesHelper.Login(_authenticationForm) },
             { Exercise.Exercise5, () => RunExercise5() },
             { Exercise.Exercise6, () => RunExercise6() },
             { Exercise.Exercise7, () => RunExercise7() },
-            { Exercise.Exit, () => ConsoleHelper.CloseApplication() }
+            { Exercise.Exit, () => ConsoleManager.CloseApplication() }
         };
 
         #endregion
@@ -47,7 +46,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
             for (int i = 1; i <= NumberCount; i++)
             {
                 Console.WriteLine($"Введите {i}-ое число:");
-                numbers.Add(ConsoleHelper.ReadlineIntValue());
+                numbers.Add(ConsoleManager.ReadlineIntValue());
             }
             Console.WriteLine($"Минимальное значение из трех чисел: {CalculationHelper.GetMinValue(numbers.ToArray())}");
         }
@@ -57,32 +56,9 @@ namespace GeekBrainsCSharpBasics.Lesson2
             Console.WriteLine($"Подсчет количества цифр в числе{Environment.NewLine}");
 
             Console.WriteLine($"Введите число:");
-            int number = ConsoleHelper.ReadlineIntValue();
+            int number = ConsoleManager.ReadlineIntValue();
 
             Console.WriteLine($"Количество цифр в числе {number}: {CalculationHelper.GetDigits(number).Length}");
-        }
-
-        private static void RunExercise4()
-        {
-            Console.WriteLine($"Форма авторизации{Environment.NewLine}");
-
-            AuthenticationForm authenticationForm = new AuthenticationForm();
-            int attemtsCount = 0;
-            do
-            {
-                authenticationForm.InputData();
-                if (authenticationForm.Equals(_authenticationForm))
-                {
-                    Console.WriteLine("Добро пожаловать, падаван!");
-                    return;
-                }
-
-                attemtsCount++;
-                if (attemtsCount < AuthenticationAttemptsCount)
-                    Console.WriteLine($"Введен неверный логин/пароль. Осталось попыток: {AuthenticationAttemptsCount - attemtsCount}");
-            } while (attemtsCount < AuthenticationAttemptsCount);
-
-            Console.WriteLine("Превышено количество попыток входа");
         }
 
         private static void RunExercise5()
@@ -99,7 +75,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
             Console.WriteLine($"Подсчет \"хороших\" чисел от {MinGoodNumber} до {MaxGoodNumber}");
             Stopwatch stopwatch = Stopwatch.GetStopwatch();
 
-            if (!ConsoleHelper.ReadKeyYesNoValue("Запустить подсчет? (Y/N): "))
+            if (!ConsoleManager.ReadKeyYesNoValue("Запустить подсчет? (Y/N): "))
             {
                 Console.WriteLine("Подсчет \"хороших\" чисел отменен");
                 return;
@@ -130,9 +106,9 @@ namespace GeekBrainsCSharpBasics.Lesson2
             Console.WriteLine($"Рекурсивный подсчет суммы чисел в диапазоне{Environment.NewLine}");
 
             Console.WriteLine("Введите значение первой границы: ");
-            int firstRangeBorder = ConsoleHelper.ReadlineIntValue();
+            int firstRangeBorder = ConsoleManager.ReadlineIntValue();
             Console.WriteLine("Введите значение второй границы: ");
-            int secondRangeBorder = ConsoleHelper.ReadlineIntValue();
+            int secondRangeBorder = ConsoleManager.ReadlineIntValue();
 
             if (firstRangeBorder > secondRangeBorder)
                 CalculationHelper.Rearrangement(ref firstRangeBorder, ref secondRangeBorder);

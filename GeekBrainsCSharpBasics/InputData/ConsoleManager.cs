@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GeekBrainsCSharpBasics
 {
-    public static class ConsoleHelper
+    public static class ConsoleManager
     {
         public static void Pause()
         {
@@ -39,6 +39,21 @@ namespace GeekBrainsCSharpBasics
             while (true);
         }
 
+        public static void PrintValues<TElement>(IEnumerable<TElement> values)
+        {
+            int blocks = 0;
+            foreach (TElement value in values)
+            {
+                Console.Write($"{new string(' ', Math.Abs(12 - value.ToString().Length))}{value}\t");
+                blocks++;
+                if (blocks >= 7)
+                {
+                    blocks = 0;
+                    Console.WriteLine();
+                }
+            }
+        }
+
         public static void PrintEnumContent(this Type enumType)
         {
             Array enumValues = Enum.GetValues(enumType);
@@ -59,9 +74,28 @@ namespace GeekBrainsCSharpBasics
             return value.Value;
         }
 
-        public static bool ReadKeyYesNoValue(string message)
+        public static int ReadlineIntValue(string message)
         {
             Console.Write(message);
+            return ReadlineIntValue();
+        }
+
+        public static int ReadlineNonZeroPositiveIntValue(string message)
+        {
+            int value;
+            do
+            {
+                value = ReadlineIntValue(message);
+                if (value <= 0)
+                    Console.WriteLine("Значение должно быть больше 0");
+            } while (value <= 0);
+
+            return value;
+        }
+
+        public static bool ReadKeyYesNoValue(string message)
+        {
+            Console.WriteLine(message);
             int currentLine = Console.CursorTop;
             do
             {

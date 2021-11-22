@@ -1,6 +1,7 @@
 ﻿using GeekBrainsCSharpBasics.Lesson1;
 using GeekBrainsCSharpBasics.Lesson2;
 using GeekBrainsCSharpBasics.Lesson3;
+using GeekBrainsCSharpBasics.Lesson4;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +13,8 @@ namespace GeekBrainsCSharpBasics
             { Lesson.Lesson1, () => Lesson1Starter.Instance.RunExercises() },
             { Lesson.Lesson2, () => Lesson2Starter.Instance.RunExercises() },
             { Lesson.Lesson3, () => Lesson3Starter.Instance.RunExercises() },
-            { Lesson.Exit, () => ConsoleHelper.CloseApplication() }
+            { Lesson.Lesson4, () => Lesson4Starter.Instance.RunExercises() },
+            { Lesson.Exit, () => ConsoleManager.CloseApplication() }
         };
 
         public static void StartLesson()
@@ -20,10 +22,10 @@ namespace GeekBrainsCSharpBasics
             Console.WriteLine("Выберите урок:");
             do
             {
-                Lesson lesson = ConsoleHelper.InputMenuItems(_lessons.Keys);
+                Lesson lesson = ConsoleManager.InputMenuItems(_lessons.Keys);
 
                 _lessons[lesson]();
-                ConsoleHelper.PauseAndClear();
+                ConsoleManager.PauseAndClear();
             } while (true);
         }
     }

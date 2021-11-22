@@ -16,7 +16,7 @@ namespace GeekBrainsCSharpBasics.Lesson1
             { Exercise.Exercise3, () => RunExercise3() },
             { Exercise.Exercise4, () => RunExercise4() },
             { Exercise.Exercise5, () => RunExercise5() },
-            { Exercise.Exit, () => ConsoleHelper.CloseApplication() }
+            { Exercise.Exit, () => ConsoleManager.CloseApplication() }
         };
 
         #endregion
@@ -28,7 +28,7 @@ namespace GeekBrainsCSharpBasics.Lesson1
         private static void RunExercise1()
         {
             Console.WriteLine("Выберите тип анкеты:");
-            ConsoleHelper.PrintEnumContent(typeof(OutputConcatenationKinds));
+            ConsoleManager.PrintEnumContent(typeof(OutputConcatenationKinds));
 
             int outputConcatenationKind = default;
             outputConcatenationKind = outputConcatenationKind.InputEnum<OutputConcatenationKinds>();
@@ -68,9 +68,9 @@ namespace GeekBrainsCSharpBasics.Lesson1
             Console.WriteLine();
 
             Console.WriteLine("Введите первое число: ");
-            int intValue1 = ConsoleHelper.ReadlineIntValue();
+            int intValue1 = ConsoleManager.ReadlineIntValue();
             Console.WriteLine("Введите второе число: ");
-            int intValue2 = ConsoleHelper.ReadlineIntValue();
+            int intValue2 = ConsoleManager.ReadlineIntValue();
 
             CalculationHelper.Rearrangement(ref intValue1, ref intValue2);
 
@@ -84,9 +84,9 @@ namespace GeekBrainsCSharpBasics.Lesson1
 
         private static void RunExercise5()
         {
-            ConsoleHelper.PrintByCenter(MyPersonDataConstants.Name);
-            ConsoleHelper.PrintByCenter(MyPersonDataConstants.Surname);
-            ConsoleHelper.PrintByCenter(MyPersonDataConstants.City);
+            ConsoleManager.PrintByCenter(MyPersonDataConstants.Name);
+            ConsoleManager.PrintByCenter(MyPersonDataConstants.Surname);
+            ConsoleManager.PrintByCenter(MyPersonDataConstants.City);
         }
     }
 }
