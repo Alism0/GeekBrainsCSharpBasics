@@ -10,13 +10,13 @@ namespace GeekBrainsCSharpBasics.Lesson1
 
         #region Функции запуска заданий
 
-        protected override Dictionary<Exercises, Action> LessonExercises => new Dictionary<Exercises, Action>() {
-            { Exercises.Exercise1, () => RunExercise1() },
-            { Exercises.Exercise2, () => RunExercise2() },
-            { Exercises.Exercise3, () => RunExercise3() },
-            { Exercises.Exercise4, () => RunExercise4() },
-            { Exercises.Exercise5, () => RunExercise5() },
-            { Exercises.Exit, () => ConsoleHelper.CloseApplication() }
+        protected override Dictionary<Exercise, Action> LessonExercises => new Dictionary<Exercise, Action>() {
+            { Exercise.Exercise1, () => RunExercise1() },
+            { Exercise.Exercise2, () => RunExercise2() },
+            { Exercise.Exercise3, () => RunExercise3() },
+            { Exercise.Exercise4, () => RunExercise4() },
+            { Exercise.Exercise5, () => RunExercise5() },
+            { Exercise.Exit, () => ConsoleHelper.CloseApplication() }
         };
 
         #endregion

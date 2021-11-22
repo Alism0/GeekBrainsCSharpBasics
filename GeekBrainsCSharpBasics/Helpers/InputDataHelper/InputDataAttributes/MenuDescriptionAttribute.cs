@@ -4,13 +4,13 @@ namespace GeekBrainsCSharpBasics
 {
     public class MenuDescriptionAttribute : Attribute
     {
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         public int? Order { get; set; }
 
-        public MenuDescriptionAttribute(string name)
+        public MenuDescriptionAttribute(string description)
         {
-            Name = name;
+            Description = description;
         }
 
         public MenuDescriptionAttribute(string name, int order) : this(name)

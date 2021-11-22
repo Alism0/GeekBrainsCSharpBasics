@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GeekBrainsCSharpBasics
 {
@@ -43,11 +45,11 @@ namespace GeekBrainsCSharpBasics
 
             foreach (object enumValue in enumValues)
             {
-                PrintItem((int)enumValue, enumValue.ToString());
+                PrintMenuItem((int)enumValue, enumValue.ToString());
             }
         }
 
-        public static void PrintItem(int number, string description) =>
+        public static void PrintMenuItem(int number, string description) =>
             Console.WriteLine($"{number}. {description}");
 
         public static int ReadlineIntValue()
@@ -83,6 +85,40 @@ namespace GeekBrainsCSharpBasics
         {
             Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
             Console.WriteLine(value);
+        }
+
+        public static TMenuEnum InputMenuItems<TMenuEnum>(IEnumerable<TMenuEnum> menuItems) where TMenuEnum : Enum
+        {
+            Dictionary<TMenuEnum, MenuDescriptionAttribute> menuDescriptions = new Dictionary<TMenuEnum, MenuDescriptionAttribute>();
+            foreach (TMenuEnum menuItem in menuItems)
+            {
+                MenuDescriptionAttribute menuDescription = menuItem.GetAttributeValue<MenuDescriptionAttribute, MenuDescriptionAttribute>(attribute => attribute);
+                if (menuDescription == null)
+                    continue;
+
+                menuDescriptions[menuItem] = menuDescription;
+            }
+
+            if (!menuDescriptions.Any())
+                throw new NotFoundMenuItemsException();
+
+            menuDescriptions = menuDescriptions.OrderBy(menuDescription => menuDescription.Value.Order)
+                .ToDictionary(menuDescription => menuDescription.Key, menuDescription => menuDescription.Value);
+
+
+            foreach (var menuDescription in menuDescriptions)
+                Console.WriteLine($"{menuDescription.Key:D}. {menuDescription.Value.Description}");
+
+
+            TMenuEnum menuItemValue = default;
+            menuItemValue = menuItemValue.InputEnum();
+            while (!menuDescriptions.ContainsKey(menuItemValue))
+            {
+                Console.WriteLine("Незарегистрированный тип");
+                menuItemValue = menuItemValue.InputEnum();
+            }
+
+            return menuItemValue;
         }
     }
 }

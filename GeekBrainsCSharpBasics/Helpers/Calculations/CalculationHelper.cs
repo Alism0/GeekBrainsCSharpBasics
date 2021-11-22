@@ -36,5 +36,30 @@ namespace GeekBrainsCSharpBasics
             } while (value > 0);
             return digits.ToArray();
         }
+
+        public static RationalNumber SimplifyRationalNumber(RationalNumber rationalNumber)
+        {
+            int gcdValue = GetGreatestCommonDivisor(rationalNumber.Numerator, rationalNumber.Denumerator);
+            if (gcdValue != 1)
+                return new RationalNumber(rationalNumber.Numerator / gcdValue, rationalNumber.Denumerator / gcdValue);
+
+            return rationalNumber;
+        }
+
+        public static int GetGreatestCommonDivisor(int firstValue, int secondValue)
+        {
+            firstValue = Math.Abs(firstValue);
+            secondValue = Math.Abs(secondValue);
+
+            while (firstValue != 0 && secondValue != 0)
+            {
+                if (firstValue > secondValue)
+                    firstValue %= secondValue;
+                else
+                    secondValue %= firstValue;
+            }
+
+            return firstValue | secondValue;
+        }
     }
 }

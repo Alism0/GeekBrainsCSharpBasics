@@ -1,5 +1,6 @@
 ﻿using GeekBrainsCSharpBasics.Lesson1;
 using GeekBrainsCSharpBasics.Lesson2;
+using GeekBrainsCSharpBasics.Lesson3;
 using System;
 using System.Collections.Generic;
 
@@ -7,23 +8,23 @@ namespace GeekBrainsCSharpBasics
 {
     public static class LessonStarter
     {
-        private readonly static Dictionary<Lessons, Action> _lessons = new Dictionary<Lessons, Action>() {
-            { Lessons.Lesson1, () => Lesson1Starter.Instance.RunExercises() },
-            { Lessons.Lesson2, () => Lesson2Starter.Instance.RunExercises() }
+        private readonly static Dictionary<Lesson, Action> _lessons = new Dictionary<Lesson, Action>() {
+            { Lesson.Lesson1, () => Lesson1Starter.Instance.RunExercises() },
+            { Lesson.Lesson2, () => Lesson2Starter.Instance.RunExercises() },
+            { Lesson.Lesson3, () => Lesson3Starter.Instance.RunExercises() },
+            { Lesson.Exit, () => ConsoleHelper.CloseApplication() }
         };
 
         public static void StartLesson()
         {
             Console.WriteLine("Выберите урок:");
-            ConsoleHelper.PrintEnumContent(typeof(Lessons));
-            int lesson = default;
-            lesson = lesson.InputEnum<Lessons>();
-            while (!_lessons.ContainsKey((Lessons)lesson))
+            do
             {
-                Console.WriteLine("Незарегистрированный тип");
-            }
+                Lesson lesson = ConsoleHelper.InputMenuItems(_lessons.Keys);
 
-            _lessons[(Lessons)lesson]();
+                _lessons[lesson]();
+                ConsoleHelper.PauseAndClear();
+            } while (true);
         }
     }
 }

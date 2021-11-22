@@ -23,15 +23,15 @@ namespace GeekBrainsCSharpBasics.Lesson2
 
         #region Функции запуска заданий
 
-        protected override Dictionary<Exercises, Action> LessonExercises => new Dictionary<Exercises, Action>() {
-            { Exercises.Exercise1, () => RunExercise1() },
-            { Exercises.Exercise2, () => RunExercise2() },
-            { Exercises.Exercise3, () => RunExercise3() },
-            { Exercises.Exercise4, () => RunExercise4() },
-            { Exercises.Exercise5, () => RunExercise5() },
-            { Exercises.Exercise6, () => RunExercise6() },
-            { Exercises.Exercise7, () => RunExercise7() },
-            { Exercises.Exit, () => ConsoleHelper.CloseApplication() }
+        protected override Dictionary<Exercise, Action> LessonExercises => new Dictionary<Exercise, Action>() {
+            { Exercise.Exercise1, () => RunExercise1() },
+            { Exercise.Exercise2, () => RunExercise2() },
+            { Exercise.Exercise3, () => ExercisesHelper.GetPositiveOddNumbersSum() },
+            { Exercise.Exercise4, () => RunExercise4() },
+            { Exercise.Exercise5, () => RunExercise5() },
+            { Exercise.Exercise6, () => RunExercise6() },
+            { Exercise.Exercise7, () => RunExercise7() },
+            { Exercise.Exit, () => ConsoleHelper.CloseApplication() }
         };
 
         #endregion
@@ -60,26 +60,6 @@ namespace GeekBrainsCSharpBasics.Lesson2
             int number = ConsoleHelper.ReadlineIntValue();
 
             Console.WriteLine($"Количество цифр в числе {number}: {CalculationHelper.GetDigits(number).Length}");
-        }
-
-        private static void RunExercise3()
-        {
-            Console.WriteLine($"Подсчет суммы положительных нечетных чисел");
-            Console.WriteLine($"(для прерывания ввода чисел введите 0){Environment.NewLine}");
-
-            int positiveOddNumbersSum = 0;
-
-            int number;
-            do
-            {
-                Console.WriteLine("Введите число:");
-                number = ConsoleHelper.ReadlineIntValue();
-                if (number > 0 && number % 2 != 0)
-                    positiveOddNumbersSum += number;
-
-            } while (number != 0);
-
-            Console.WriteLine($"Сумма введенных положительных нечетных чисел: {positiveOddNumbersSum}");
         }
 
         private static void RunExercise4()
