@@ -7,8 +7,13 @@ namespace GeekBrainsCSharpBasics
 {
     public static class InputDataExtensions
     {
-        public static string InputValue(this string _) =>
-            Console.ReadLine();
+        public static string InputValue(this string _, string mask = null)
+        {
+            if (string.IsNullOrEmpty(mask))
+                return Console.ReadLine();
+
+            return ParseInputValue(mask);
+        }
 
         public static double InputValue(this double doubleValue)
         {
@@ -64,7 +69,8 @@ namespace GeekBrainsCSharpBasics
                     if (typeof(string) == inputPropertyDescription.Property.PropertyType)
                     {
                         string result = default;
-                        result = result.InputValue();
+                        result = result.InputValue(inputPropertyDescription.InputDescription.Mask);
+
                         inputPropertyDescription.Property.SetValue(inputData, result);
 
                         return;
@@ -86,7 +92,7 @@ namespace GeekBrainsCSharpBasics
                 return value?.ToString();
 
             string description = inputDescriptionProperty.Description;
-            string format = inputDescriptionProperty.Format;
+            string format = inputDescriptionProperty.OutputFormat;
             if (string.IsNullOrEmpty(format))
                 return $"{description}{value?.ToString()}";
 
@@ -139,6 +145,18 @@ namespace GeekBrainsCSharpBasics
                     return;
 
                 Console.WriteLine("Некорректный тип данных");
+            } while (true);
+        }
+
+        private static string ParseInputValue(string mask)
+        {
+            do
+            {
+                string stringValue = Console.ReadLine();
+                if (stringValue.IsMatch(mask))
+                    return stringValue;
+
+                Console.WriteLine("Входная строка не соответствует шаблону");
             } while (true);
         }
 

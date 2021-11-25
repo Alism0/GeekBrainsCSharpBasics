@@ -1,5 +1,6 @@
 ﻿using GeekBrainsCSharpBasics.ArraysLibrary;
 using System;
+using System.Linq;
 
 namespace GeekBrainsCSharpBasics
 {
@@ -7,7 +8,6 @@ namespace GeekBrainsCSharpBasics
     {
         private const int ArraySize = 20;
         private const int PairDivisor = 3;
-        private const int AuthenticationAttemptsCount = 3;
 
         public static void GetPositiveOddNumbersSum()
         {
@@ -46,31 +46,9 @@ namespace GeekBrainsCSharpBasics
                 value % PairDivisor == 0 && nextValue % PairDivisor != 0 || value % PairDivisor != 0 && nextValue % PairDivisor == 0
             );
 
-            Console.WriteLine($"Количество пар: {pairsCount}");
+            Console.WriteLine($"Количество пар:");
+            Console.WriteLine(pairsCount);
             return pairsCount;
-        }
-
-        public static void Login(IAccount loginData)
-        {
-            Console.WriteLine($"Форма авторизации{Environment.NewLine}");
-
-            AuthenticationForm authenticationForm = new AuthenticationForm();
-            int attemtsCount = 0;
-            do
-            {
-                authenticationForm.InputData();
-                if (authenticationForm.Equals(loginData))
-                {
-                    Console.WriteLine("Добро пожаловать, падаван!");
-                    return;
-                }
-
-                attemtsCount++;
-                if (attemtsCount < AuthenticationAttemptsCount)
-                    Console.WriteLine($"Введен неверный логин/пароль. Осталось попыток: {AuthenticationAttemptsCount - attemtsCount}");
-            } while (attemtsCount < AuthenticationAttemptsCount);
-
-            Console.WriteLine("Превышено количество попыток входа");
         }
     }
 }

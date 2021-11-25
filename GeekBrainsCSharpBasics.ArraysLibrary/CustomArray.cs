@@ -51,7 +51,7 @@ namespace GeekBrainsCSharpBasics.ArraysLibrary
             int[] values = ArraysHelper.CreateRandomValuesArray(Array.Length / step);
             int count = 0;
             for (int i = 0; i < Array.Length - 1; i += step)
-                Array[i] = values[count++];
+                this[i] = values[count++];
         }
     }
 }

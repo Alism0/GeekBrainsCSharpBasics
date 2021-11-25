@@ -2,7 +2,7 @@
 {
     public enum Lesson
     {
-        [MenuDescription("Выход", 4)]
+        [MenuDescription("Выход", 5)]
         Exit = 0,
 
         [MenuDescription("Урок 1", 0)]
@@ -15,6 +15,9 @@
         Lesson3 = 3,
 
         [MenuDescription("Урок 4", 3)]
-        Lesson4 = 4
+        Lesson4 = 4,
+
+        [MenuDescription("Урок 5", 4)]
+        Lesson5 = 5
     }
 }

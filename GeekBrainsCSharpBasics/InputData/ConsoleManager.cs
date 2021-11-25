@@ -115,6 +115,21 @@ namespace GeekBrainsCSharpBasics
             while (true);
         }
 
+        public static char ReadKeyLetter(string message)
+        {
+            Console.WriteLine(message);
+            do
+            {
+                char key = Console.ReadKey().KeyChar;
+                if (char.IsLetter(key))
+                    return key;
+
+                Console.WriteLine("Значение не является буквой");
+            }
+            while (true);
+        }
+
+
         public static void PrintByCenter(string value)
         {
             Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);

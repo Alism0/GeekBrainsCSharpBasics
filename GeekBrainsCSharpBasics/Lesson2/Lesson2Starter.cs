@@ -26,7 +26,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
             { Exercise.Exercise1, () => RunExercise1() },
             { Exercise.Exercise2, () => RunExercise2() },
             { Exercise.Exercise3, () => ExercisesHelper.GetPositiveOddNumbersSum() },
-            { Exercise.Exercise4, () => ExercisesHelper.Login(_authenticationForm) },
+            { Exercise.Exercise4, () => UserFormHelper.Login(_authenticationForm) },
             { Exercise.Exercise5, () => RunExercise5() },
             { Exercise.Exercise6, () => RunExercise6() },
             { Exercise.Exercise7, () => RunExercise7() },
