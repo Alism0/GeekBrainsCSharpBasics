@@ -45,16 +45,22 @@
   <ItemGroup>
     <Compile Include="Exceptions\NotNumberException.cs" />
     <Compile Include="Exceptions\NotFoundMenuItemsException.cs" />
+    <Compile Include="Exceptions\NotSupportInputDataFormatExeption.cs" />
     <Compile Include="ExerciseStarter.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\Calculations\CalculationHelper.cs" />
     <Compile Include="Helpers\Calculations\Numbers\INumberValue.cs" />
-    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\DataProviders\DataHelper.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Helpers\DataProviderFactory.cs" />
+    <Compile Include="Helpers\DataProviders\DataProviderFactory.cs" />
+    <Compile Include="Helpers\DataProviders\ITextParser.cs" />
     <Compile Include="Helpers\ExercisesHelper.cs" />
     <Compile Include="Helpers\FormatHelper.cs" />
     <Compile Include="Helpers\HumanMeasurements\BodyMassIndexAnalysisInfo.cs" />
     <Compile Include="Helpers\Calculations\Numbers\INumber.cs" />
+    <Compile Include="Helpers\UserFormHelper.cs" />
+    <Compile Include="InputData\UserForm\RegistrationForm.cs" />
+    <Compile Include="Lesson5\Exercise2\Message.cs" />
     <Compile Include="InputData\InputDataAttributes\MenuDescriptionAttribute.cs" />
     <Compile Include="InputData\ConsoleManager.cs" />
     <Compile Include="Helpers\Calculations\Numbers\RationalNumber.cs" />
@@ -80,7 +86,7 @@
     <Compile Include="Lesson1\Exercise1\InputData\OutputConcatenationKinds.cs" />
     <Compile Include="Lesson1\MyPersonDataConstants.cs" />
     <Compile Include="Lesson2\Lesson2Starter.cs" />
-    <Compile Include="InputData\Authentication\AuthenticationForm.cs" />
+    <Compile Include="InputData\UserForm\AuthenticationForm.cs" />
     <Compile Include="Helpers\Calculations\Numbers\ComplexNumber.cs" />
     <Compile Include="Lesson3\NumberCalculations\Calculator.cs" />
     <Compile Include="Lesson3\NumberCalculations\RationalNumberCalculator.cs" />
@@ -94,12 +100,21 @@
     <Compile Include="Lesson3\NumberCalculations\OperationWrappers\AdditionOperation.cs" />
     <Compile Include="Lesson3\Lesson3Starter.cs" />
     <Compile Include="Lesson3\NumberCalculations\NumberWrappers\RationalNumberWrapper.cs" />
-    <Compile Include="InputData\Authentication\IAccount.cs" />
-    <Compile Include="InputData\Authentication\Account.cs" />
+    <Compile Include="InputData\UserForm\IAccount.cs" />
+    <Compile Include="InputData\UserForm\Account.cs" />
     <Compile Include="Lesson4\Helpers\TwoDimensionsArrayOperation.cs" />
     <Compile Include="Lesson4\Helpers\CustomArrayOperation.cs" />
     <Compile Include="Lesson4\Helpers\ArraysStarter.cs" />
     <Compile Include="Lesson4\Lesson4Starter.cs" />
+    <Compile Include="Lesson5\Exercise4\StudentGradeHelpers\AssessmentExtensions.cs" />
+    <Compile Include="Lesson5\Exercise4\Exeptions\CourseAssessmentExeption.cs" />
+    <Compile Include="Lesson5\Exercise4\StudentGradeHelpers\StudentGradeParser.cs" />
+    <Compile Include="Lesson5\Exercise4\StudentGrade.cs" />
+    <Compile Include="Lesson5\Exercise4\CourseAssessment.cs" />
+    <Compile Include="Lesson5\Exercise4\StudentGradeExecutor.cs" />
+    <Compile Include="Lesson5\Lesson5Starter.cs" />
+    <Compile Include="Lesson5\Exercise2\MessageHelper.cs" />
+    <Compile Include="Lesson5\Exercise2\MessageOperation.cs" />
     <Compile Include="LessonStarter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +143,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\LoginData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\StudentAssessments.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

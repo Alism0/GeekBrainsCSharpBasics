@@ -4,7 +4,13 @@ namespace GeekBrainsCSharpBasics.ArraysLibrary
 {
     public class TwoDimensionsArray
     {
-        public int[,] Array { get; }
+        public int[,] Array { get; private set; }
+
+        public int this[int firstIndex, int secondIndex]
+        {
+            get => Array[firstIndex, secondIndex];
+            set => Array[firstIndex, secondIndex] = value;
+        }
 
         public TwoDimensionsArray(int firstDimensionSize, int secondDimensionSize)
         {
@@ -42,7 +48,7 @@ namespace GeekBrainsCSharpBasics.ArraysLibrary
             for (int i = 0; i < Array.GetLength(0); i++)
             {
                 for (int j = 0; j < Array.GetLength(1); j++)
-                    Array[i, j] = values[count++];
+                    this[i, j] = values[count++];
             }
         }
     }

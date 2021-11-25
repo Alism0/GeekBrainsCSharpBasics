@@ -57,7 +57,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
             string[] loginData = DataHelper.LoadFromFile(DataHelper.LoginDataFilePath);
             if (loginData.Length == 2)
             {
-                ExercisesHelper.Login(new Account() { Login = loginData[0], Password = loginData[1] });
+                UserFormHelper.Login(new Account() { Login = loginData[0], Password = loginData[1] });
                 return;
             }
             Console.WriteLine("Нет зарегестрированных пользователей!");

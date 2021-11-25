@@ -5,9 +5,11 @@ namespace GeekBrainsCSharpBasics
     [AttributeUsage(AttributeTargets.Property, Inherited = true)]
     public class InputDescriptionPropertyAttribute : InputDescriptionAttribute
     {
-        public string Format { get; set; }
+        public string OutputFormat { get; set; }
 
         public int Order { get; set; }
+
+        public string Mask { get; set; }
 
         public InputDescriptionPropertyAttribute() : base() { }
 
@@ -22,7 +24,7 @@ namespace GeekBrainsCSharpBasics
 
         public InputDescriptionPropertyAttribute(string description, int order, string format) : this(description, order)
         {
-            Format = format;
+            OutputFormat = format;
         }
     }
 }
