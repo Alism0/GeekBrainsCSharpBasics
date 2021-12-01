@@ -5,7 +5,7 @@ using System.IO;
 
 namespace GeekBrainsCSharpBasics.DataProvidersLibrary
 {
-    public class FileSystemDataProvider : IDataProvider<string[]>
+    public sealed class FileSystemDataProvider : IDataProvider<string[]>
     {
         private const int BufferSize = 100;
         private readonly string _filePath;

@@ -1,7 +1,6 @@
 ﻿using GeekBrainsCSharpBasics.ArraysLibrary;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace GeekBrainsCSharpBasics.Lesson5
 {
@@ -23,11 +22,7 @@ namespace GeekBrainsCSharpBasics.Lesson5
 
         #endregion
 
-        private Lesson5Starter()
-        {
-            int[] array = ArraysHelper.CreateRandomValuesArray(10, -10, 10);
-            DataHelper.SaveIntoFile(array.ConvertToStrings(), DataHelper.ArrayFilePath);
-        }
+        private Lesson5Starter()  { }
 
         private static void RunExercise3()
         {

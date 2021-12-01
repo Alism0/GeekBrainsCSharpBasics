@@ -68,9 +68,9 @@ namespace GeekBrainsCSharpBasics.Lesson1
             Console.WriteLine();
 
             Console.WriteLine("Введите первое число: ");
-            int intValue1 = ConsoleManager.ReadlineIntValue();
+            int intValue1 = ConsoleManager.ReadlineValue<int>();
             Console.WriteLine("Введите второе число: ");
-            int intValue2 = ConsoleManager.ReadlineIntValue();
+            int intValue2 = ConsoleManager.ReadlineValue<int>();
 
             CalculationHelper.Rearrangement(ref intValue1, ref intValue2);
 

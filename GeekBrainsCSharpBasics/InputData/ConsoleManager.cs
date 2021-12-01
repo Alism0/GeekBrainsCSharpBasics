@@ -67,17 +67,33 @@ namespace GeekBrainsCSharpBasics
         public static void PrintMenuItem(int number, string description) =>
             Console.WriteLine($"{number}. {description}");
 
-        public static int ReadlineIntValue()
+        public static TValue ReadlineValue<TValue>()
         {
-            IntValue value = new IntValue();
+            InputValue<TValue> value = new InputValue<TValue>();
             value.InputData();
             return value.Value;
         }
 
-        public static int ReadlineIntValue(string message)
+        public static TValue ReadlineValue<TValue>(string message)
         {
             Console.Write(message);
-            return ReadlineIntValue();
+            return ReadlineValue<TValue>();
+        }
+
+        public static (double MinValue, double MaxValue) ReadlineDoubleValuesRange()
+        {
+            (double MinValue, double MaxValue) = ReadlineValuesRange<double>();
+            CalculationHelper.SortRanges(ref MinValue, ref MaxValue);
+
+            return (MinValue, MaxValue);
+        }
+
+        public static (int MinValue, int MaxValue) ReadlineIntValuesRange()
+        {
+            (int MinValue, int MaxValue) = ReadlineValuesRange<int>();
+            CalculationHelper.SortRanges(ref MinValue, ref MaxValue);
+
+            return (MinValue, MaxValue);
         }
 
         public static int ReadlineNonZeroPositiveIntValue(string message)
@@ -85,7 +101,7 @@ namespace GeekBrainsCSharpBasics
             int value;
             do
             {
-                value = ReadlineIntValue(message);
+                value = ReadlineValue<int>(message);
                 if (value <= 0)
                     Console.WriteLine("Значение должно быть больше 0");
             } while (value <= 0);
@@ -168,6 +184,16 @@ namespace GeekBrainsCSharpBasics
             }
 
             return menuItemValue;
+        }
+
+        private static (TValue MinValue, TValue MaxValue) ReadlineValuesRange<TValue>()
+            where TValue : struct
+        {
+            Console.WriteLine("Введите границы значений");
+            TValue minValue = ReadlineValue<TValue>("Введите первое значение границы: ");
+            TValue maxValue = ReadlineValue<TValue>("Введите последнее значение границы: ");
+
+            return (minValue, maxValue);
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace GeekBrainsCSharpBasics
 {
-    public enum Lesson
+    public enum Lesson : short
     {
-        [MenuDescription("Выход", 5)]
+        [MenuDescription("Выход", 9)]
         Exit = 0,
 
         [MenuDescription("Урок 1", 0)]
@@ -18,6 +18,9 @@
         Lesson4 = 4,
 
         [MenuDescription("Урок 5", 4)]
-        Lesson5 = 5
+        Lesson5 = 5,
+
+        [MenuDescription("Урок 6", 5)]
+        Lesson6 = 6
     }
 }

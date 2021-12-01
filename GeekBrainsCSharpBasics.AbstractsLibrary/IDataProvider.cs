@@ -1,6 +1,6 @@
 ﻿namespace GeekBrainsCSharpBasics.AbstractsLibrary
 {
-    public interface IDataProvider<TData>
+    public interface IDataProvider<TData> : IProvider
     {
         TData Load();
 

@@ -22,6 +22,25 @@ namespace GeekBrainsCSharpBasics
             value1 -= value2;
         }
 
+        public static void Rearrangement<TValue>(ref TValue firstValue, ref TValue secondValue)
+        {
+            TValue tempValue = firstValue;
+            firstValue = secondValue;
+            secondValue = tempValue;
+        }
+
+        public static void SortRanges(ref int minValue, ref int maxValue)
+        {
+            if (minValue > maxValue)
+                Rearrangement(ref minValue, ref maxValue);
+        }
+
+        public static void SortRanges(ref double minValue, ref double maxValue)
+        {
+            if (minValue > maxValue)
+                Rearrangement(ref minValue, ref maxValue);
+        }
+
         public static int GetMinValue(params int[] values) =>
             values.Min();
 
