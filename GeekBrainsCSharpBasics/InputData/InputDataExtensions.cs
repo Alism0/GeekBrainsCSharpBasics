@@ -27,6 +27,12 @@ namespace GeekBrainsCSharpBasics
             return intValue;
         }
 
+        public static short InputValue(this short intValue)
+        {
+            ParseInputValue((value) => short.TryParse(value, out intValue));
+            return intValue;
+        }
+
         public static void InputData<TInputData>(this TInputData inputData) where TInputData : IInputData
         {
             PropertyInfo[] properties = inputData.GetType().GetProperties();
@@ -125,7 +131,7 @@ namespace GeekBrainsCSharpBasics
 
         public static TEnum InputEnum<TEnum>(this TEnum _) where TEnum : Enum
         {
-            int enumValue = default;
+            short enumValue = default;
             enumValue = enumValue.InputValue();
 
             while (!Enum.IsDefined(typeof(TEnum), enumValue))

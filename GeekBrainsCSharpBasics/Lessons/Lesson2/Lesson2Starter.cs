@@ -46,7 +46,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
             for (int i = 1; i <= NumberCount; i++)
             {
                 Console.WriteLine($"Введите {i}-ое число:");
-                numbers.Add(ConsoleManager.ReadlineIntValue());
+                numbers.Add(ConsoleManager.ReadlineValue<int>());
             }
             Console.WriteLine($"Минимальное значение из трех чисел: {CalculationHelper.GetMinValue(numbers.ToArray())}");
         }
@@ -56,7 +56,7 @@ namespace GeekBrainsCSharpBasics.Lesson2
             Console.WriteLine($"Подсчет количества цифр в числе{Environment.NewLine}");
 
             Console.WriteLine($"Введите число:");
-            int number = ConsoleManager.ReadlineIntValue();
+            int number = ConsoleManager.ReadlineValue<int>();
 
             Console.WriteLine($"Количество цифр в числе {number}: {CalculationHelper.GetDigits(number).Length}");
         }
@@ -106,9 +106,9 @@ namespace GeekBrainsCSharpBasics.Lesson2
             Console.WriteLine($"Рекурсивный подсчет суммы чисел в диапазоне{Environment.NewLine}");
 
             Console.WriteLine("Введите значение первой границы: ");
-            int firstRangeBorder = ConsoleManager.ReadlineIntValue();
+            int firstRangeBorder = ConsoleManager.ReadlineValue<int>();
             Console.WriteLine("Введите значение второй границы: ");
-            int secondRangeBorder = ConsoleManager.ReadlineIntValue();
+            int secondRangeBorder = ConsoleManager.ReadlineValue<int>();
 
             if (firstRangeBorder > secondRangeBorder)
                 CalculationHelper.Rearrangement(ref firstRangeBorder, ref secondRangeBorder);

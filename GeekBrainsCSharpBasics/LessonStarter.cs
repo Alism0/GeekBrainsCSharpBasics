@@ -3,6 +3,7 @@ using GeekBrainsCSharpBasics.Lesson2;
 using GeekBrainsCSharpBasics.Lesson3;
 using GeekBrainsCSharpBasics.Lesson4;
 using GeekBrainsCSharpBasics.Lesson5;
+using GeekBrainsCSharpBasics.Lesson6;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +17,7 @@ namespace GeekBrainsCSharpBasics
             { Lesson.Lesson3, () => Lesson3Starter.Instance.RunExercises() },
             { Lesson.Lesson4, () => Lesson4Starter.Instance.RunExercises() },
             { Lesson.Lesson5, () => Lesson5Starter.Instance.RunExercises() },
+            { Lesson.Lesson6, () => Lesson6Starter.Instance.RunExercises() },
             { Lesson.Exit, () => ConsoleManager.CloseApplication() }
         };
 

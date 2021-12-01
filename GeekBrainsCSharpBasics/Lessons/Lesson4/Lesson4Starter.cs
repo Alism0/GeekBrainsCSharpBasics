@@ -27,7 +27,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
         private Lesson4Starter()
         {
             int[] array = ArraysHelper.CreateRandomValuesArray(10, -10, 10);
-            DataHelper.SaveIntoFile(array.ConvertToStrings(), DataHelper.ArrayFilePath);
+            DataHelper.SaveIntoFile(array.ConvertToStrings(), PathConstants.ArrayFilePath);
         }
 
         private static void RunExercise2()
@@ -37,7 +37,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
                 Console.Clear();
                 try
                 {
-                    int[] array = DataHelper.LoadFromFile(DataHelper.ArrayFilePath).ConvertToIntegers();
+                    int[] array = DataHelper.LoadFromFile<string>(PathConstants.ArrayFilePath).ConvertToIntegers();
                     ExercisesHelper.CountPairs(array);
                     return;
                 }
@@ -54,7 +54,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
 
         private static void RunExercise4()
         {
-            string[] loginData = DataHelper.LoadFromFile(DataHelper.LoginDataFilePath);
+            string[] loginData = DataHelper.LoadFromFile<string>(PathConstants.LoginDataFilePath);
             if (loginData.Length == 2)
             {
                 UserFormHelper.Login(new Account() { Login = loginData[0], Password = loginData[1] });

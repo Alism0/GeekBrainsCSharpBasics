@@ -1,6 +1,5 @@
 ﻿using GeekBrainsCSharpBasics.ArraysLibrary;
 using System;
-using System.Linq;
 
 namespace GeekBrainsCSharpBasics
 {
@@ -20,7 +19,7 @@ namespace GeekBrainsCSharpBasics
             do
             {
                 Console.WriteLine("Введите число:");
-                number = ConsoleManager.ReadlineIntValue();
+                number = ConsoleManager.ReadlineValue<int>();
                 if (number > 0 && number % 2 != 0)
                     positiveOddNumbersSum += number;
 

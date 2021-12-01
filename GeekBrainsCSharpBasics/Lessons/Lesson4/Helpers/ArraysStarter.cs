@@ -18,7 +18,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
                 customArray = new CustomArray(size, step);
             }
             else
-                customArray = new CustomArray(DataProviderFactory.GetDataProvider(DataHelper.ArrayFilePath));
+                customArray = new CustomArray(DataProviderFactory.GetDataProvider<string>(PathConstants.ArrayFilePath));
 
             do
             {
@@ -41,7 +41,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
                         break;
                     case CustomArrayOperation.Multi:
                         Console.WriteLine();
-                        customArray.Multi(ConsoleManager.ReadlineIntValue("Введите множитель: "));
+                        customArray.Multi(ConsoleManager.ReadlineValue<int>("Введите множитель: "));
                         Console.WriteLine();
                         break;
                     case CustomArrayOperation.Inverse:

@@ -8,10 +8,6 @@ namespace GeekBrainsCSharpBasics.Lesson5
     {
         private const int WorstScoreWinnersPlacesValue = 3;
 
-        private readonly static string StudentAssessmentsFilePath = $"{AppDomain.CurrentDomain.BaseDirectory}/Files/StudentAssessments.txt";
-
-        private readonly static ITextParser<StudentGrade> Parser = new StudentGradeParser();
-
         public static void CongratulateWorstScoreWinners()
         {
             Console.WriteLine("Проверка оценок учеников или публичная казнь неуспевающих");
@@ -19,7 +15,7 @@ namespace GeekBrainsCSharpBasics.Lesson5
             Console.WriteLine("Победители:");
             Console.WriteLine();
 
-            if (!TryLoadStudentAssessmentResults(out List<StudentGrade> studentGrades))
+            if (!TryLoadStudentAssessmentResults(out StudentGrade[] studentGrades))
             {
                 Console.WriteLine("Задание будет завершено");
                 return;
@@ -35,22 +31,18 @@ namespace GeekBrainsCSharpBasics.Lesson5
             Console.WriteLine("Поздравляем!");
         }
 
-        private static bool TryLoadStudentAssessmentResults(out List<StudentGrade> studentGrades)
+        private static bool TryLoadStudentAssessmentResults(out StudentGrade[] studentGrades)
         {
-            studentGrades = new List<StudentGrade>();
+            studentGrades = null;
             try
             {
-                string[] studentAssessments = DataHelper.LoadFromFile(StudentAssessmentsFilePath);
-                if (studentAssessments.Length < 10 || studentAssessments.Length > 99)
+                if (!LoadDataExeptionHelper.TryLoadData(LoadDataHelper.LoadData<StudentGrade>, out StudentGrade[] data))
+                    return false;
+
+                if (data.Length < 10 || data.Length > 99)
                     throw new CourseAssessmentExeption("Некорретное количество учеников");
 
-                foreach (string studentAssessmentValue in studentAssessments)
-                    studentGrades.Add(Parser.Parse(studentAssessmentValue));
-            }
-            catch (NotSupportInputDataFormatExeption exeption)
-            {
-                Console.WriteLine(exeption.Message);
-                return false;
+                studentGrades = data;
             }
             catch (CourseAssessmentExeption exeption)
             {

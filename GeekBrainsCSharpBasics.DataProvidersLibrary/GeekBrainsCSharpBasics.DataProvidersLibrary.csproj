@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryDataProvider.cs" />
+    <Compile Include="DoubleBinaryDataProvider.cs" />
     <Compile Include="FileSystemDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

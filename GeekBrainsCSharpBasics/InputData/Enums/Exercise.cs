@@ -1,6 +1,6 @@
 ﻿namespace GeekBrainsCSharpBasics
 {
-    public enum Exercise
+    public enum Exercise : short
     {
         [MenuDescription("Закрыть приложение", 7)]
         Exit = 0,
