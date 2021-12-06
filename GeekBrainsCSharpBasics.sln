@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.AbstractsLibrary", "GeekBrainsCSharpBasics.AbstractsLibrary\GeekBrainsCSharpBasics.AbstractsLibrary.csproj", "{D343DA53-1819-4215-84FD-C4E2191521C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.WinForms", "GeekBrainsCSharpBasics.WinForms\GeekBrainsCSharpBasics.WinForms.csproj", "{F3592D59-7B88-4068-A2FA-C5108B988AF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D343DA53-1819-4215-84FD-C4E2191521C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D343DA53-1819-4215-84FD-C4E2191521C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D343DA53-1819-4215-84FD-C4E2191521C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
