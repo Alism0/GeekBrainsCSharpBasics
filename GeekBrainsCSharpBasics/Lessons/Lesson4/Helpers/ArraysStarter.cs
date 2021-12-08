@@ -1,10 +1,14 @@
 ﻿using GeekBrainsCSharpBasics.ArraysLibrary;
+using GeekBrainsCSharpBasics.ExtensionsLibrary;
+using GeekBrainsCSharpBasics.InputDataLibrary;
 using System;
 
 namespace GeekBrainsCSharpBasics.Lesson4
 {
     public static class ArraysStarter
     {
+        private static readonly DataProviderFactory _dataProviderFactory = new DataProviderFactory();
+
         public static void RunCustomArrayOperations()
         {
             Console.Write("Работа с массивом");
@@ -18,7 +22,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
                 customArray = new CustomArray(size, step);
             }
             else
-                customArray = new CustomArray(DataProviderFactory.GetDataProvider<string>(PathConstants.ArrayFilePath));
+                customArray = new CustomArray(_dataProviderFactory.GetDataProvider<string[]>(PathConstants.ArrayFilePath));
 
             do
             {
@@ -109,7 +113,8 @@ namespace GeekBrainsCSharpBasics.Lesson4
 
                     case TwoDimensionsArrayOperation.Print:
                         Console.WriteLine("Результат операции: ");
-                        twoDimensionsArray.Array.GetDimensions().ForEach(value => {
+                        twoDimensionsArray.Array.GetDimensions().ForEach(value =>
+                        {
                             ConsoleManager.PrintValues(value);
                             Console.WriteLine();
                         });

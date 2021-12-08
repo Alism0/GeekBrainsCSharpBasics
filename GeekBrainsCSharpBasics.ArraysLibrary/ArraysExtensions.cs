@@ -15,7 +15,8 @@ namespace GeekBrainsCSharpBasics.ArraysLibrary
         }
 
         public static int[] ConvertToIntegers(this string[] values) =>
-            values.Handle((value) => {
+            values.Handle((value) =>
+            {
                 if (int.TryParse(value, out int intValue))
                     return intValue;
                 else

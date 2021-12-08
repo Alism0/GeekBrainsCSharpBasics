@@ -1,4 +1,4 @@
-﻿using GeekBrainsCSharpBasics.ArraysLibrary;
+﻿using GeekBrainsCSharpBasics.ExtensionsLibrary;
 using System;
 using System.Collections.Generic;
 
@@ -22,7 +22,7 @@ namespace GeekBrainsCSharpBasics.Lesson5
 
         #endregion
 
-        private Lesson5Starter()  { }
+        private Lesson5Starter() { }
 
         private static void RunExercise3()
         {

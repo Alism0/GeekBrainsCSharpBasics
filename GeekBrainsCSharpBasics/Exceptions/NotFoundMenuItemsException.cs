@@ -2,7 +2,7 @@
 
 namespace GeekBrainsCSharpBasics
 {
-    public class NotFoundMenuItemsException: Exception
+    public class NotFoundMenuItemsException : Exception
     {
         private const string _message = "Элементы меню не найдены";
 

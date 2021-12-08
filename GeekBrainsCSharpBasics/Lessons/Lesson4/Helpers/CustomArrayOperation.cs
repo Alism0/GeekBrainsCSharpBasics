@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson4
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics.Lesson4
 {
     public enum CustomArrayOperation
     {

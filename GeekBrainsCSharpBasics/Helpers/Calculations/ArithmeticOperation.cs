@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics
 {
     public enum ArithmeticOperation
     {

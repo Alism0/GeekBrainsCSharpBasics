@@ -17,7 +17,8 @@ namespace GeekBrainsCSharpBasics.WinForms.Lesson7
 
         private NumberDetectiveGame() => Reset();
 
-        public void Set(int userNumber) {
+        public void Set(int userNumber)
+        {
             UserNumber = userNumber;
             AddMoveCount();
         }

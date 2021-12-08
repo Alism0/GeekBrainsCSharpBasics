@@ -16,7 +16,7 @@ namespace GeekBrainsCSharpBasics
                 : throw new ArgumentException("Знаменатель не может быть равен 0");
         }
 
-        public RationalNumber(int numerator) : this (numerator, 1) { }
+        public RationalNumber(int numerator) : this(numerator, 1) { }
 
         public RationalNumber(int numerator, int denumerator)
         {

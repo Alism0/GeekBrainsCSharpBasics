@@ -45,6 +45,7 @@
     <Compile Include="DoubleBinaryDataProvider.cs" />
     <Compile Include="FileSystemDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlDataProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeekBrainsCSharpBasics.AbstractsLibrary\GeekBrainsCSharpBasics.AbstractsLibrary.csproj">

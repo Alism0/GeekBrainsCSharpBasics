@@ -10,13 +10,13 @@ namespace GeekBrainsCSharpBasics
 
         public ComplexNumber(int realNumber) : this(realNumber, 0) { }
 
-        public ComplexNumber (int realNumber, int imaginaryNumber)
+        public ComplexNumber(int realNumber, int imaginaryNumber)
         {
             RealNumber = realNumber;
             ImaginaryNumber = imaginaryNumber;
         }
 
-        public static ComplexNumber operator +(ComplexNumber complexNumber) => 
+        public static ComplexNumber operator +(ComplexNumber complexNumber) =>
             complexNumber;
 
         public static ComplexNumber operator -(ComplexNumber complexNumber) =>

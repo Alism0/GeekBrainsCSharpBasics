@@ -17,10 +17,9 @@ namespace GeekBrainsCSharpBasics.WinForms.Lesson7
 
         private void EnterNumberButton_Click(object sender, EventArgs e)
         {
-            IntInputForm inputForm = new IntInputForm();
+            IntInputForm inputForm = this.RunChildForm<NumberDetective, IntInputForm>();
 
             inputForm.OnEnterKeyPress += OnEnterNumberInput;
-            inputForm.Show(this);
         }
 
         private void OnEnterNumberInput(object sender, EventArgs e)

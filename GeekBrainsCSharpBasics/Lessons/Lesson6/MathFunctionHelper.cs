@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +9,9 @@ namespace GeekBrainsCSharpBasics.Lesson6
     {
         private delegate double OneCoefficientOneVariableMathFunction(double xVariable, double aCoefficient);
 
-        private readonly static Dictionary<MathFunction, OneCoefficientOneVariableMathFunction> MathFunctions =
+        private static readonly DataProvider _dataProvider = new DataProvider(new DataProviderFactory());
+
+        private static readonly Dictionary<MathFunction, OneCoefficientOneVariableMathFunction> MathFunctions =
             new Dictionary<MathFunction, OneCoefficientOneVariableMathFunction>() {
                 { MathFunction.QuadraticFunction, (xVariable, aCoefficient) => aCoefficient * Math.Pow(xVariable, 2)},
                 { MathFunction.SineFunction, (xVariable, aCoefficient) => aCoefficient * Math.Sin(xVariable)}
@@ -36,8 +39,8 @@ namespace GeekBrainsCSharpBasics.Lesson6
 
             List<(double xValue, double yValue)> values = GetFunctionValues(true);
 
-            DataHelper.SaveIntoFile(values.Select(value => value.yValue).ToArray(), PathConstants.BinDataFilePath);
-            double[] yValues = DataHelper.LoadFromFile<double>(PathConstants.BinDataFilePath);
+            _dataProvider.SaveIntoFile(values.Select(value => value.yValue).ToArray(), PathConstants.BinDataFilePath);
+            double[] yValues = _dataProvider.LoadFromFile<double[]>(PathConstants.BinDataFilePath);
 
             FindMinValue(yValues, out double minValue);
 
@@ -73,7 +76,7 @@ namespace GeekBrainsCSharpBasics.Lesson6
         {
             Console.WriteLine("----- X ----- Y -----");
             foreach ((double xValue, double yValue) in values)
-                Console.WriteLine($"| {xValue, 8:0.000} | {yValue, 8:0.000} |");
+                Console.WriteLine($"| {xValue,8:0.000} | {yValue,8:0.000} |");
 
             Console.WriteLine("---------------------");
         }

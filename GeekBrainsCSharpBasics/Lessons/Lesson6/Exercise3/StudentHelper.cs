@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeekBrainsCSharpBasics.StudentsLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,8 @@ namespace GeekBrainsCSharpBasics.Lesson6
 {
     public static class StudentHelper
     {
+        private static readonly StudentsProvider _studentsProvider = new StudentsProvider();
+
         private const int MaxCourse = 6;
 
         private readonly static Dictionary<StudentOperation, Action<Student[]>> StudentOperations = new Dictionary<StudentOperation, Action<Student[]>>()
@@ -32,7 +35,7 @@ namespace GeekBrainsCSharpBasics.Lesson6
                 Console.WriteLine();
                 StudentOperation studentOperationKey = ConsoleManager.InputMenuItems(StudentOperations.Keys);
 
-                students = students ?? LoadDataHelper.LoadData<Student>();
+                students = students ?? _studentsProvider.LoadData<Student>(PathConstants.StudentsFilePath);
                 StudentOperations[studentOperationKey](students);
             } while (!ConsoleManager.ReadKeyYesNoValue("Завершить? (Y/N)"));
         }

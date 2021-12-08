@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson3
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics.Lesson3
 {
     public class RationalNumberInput : IInputData
     {
