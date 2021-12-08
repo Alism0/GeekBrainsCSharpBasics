@@ -1,4 +1,5 @@
 ﻿using GeekBrainsCSharpBasics.ArraysLibrary;
+using GeekBrainsCSharpBasics.InputDataLibrary;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +8,9 @@ namespace GeekBrainsCSharpBasics.Lesson4
 {
     public sealed class Lesson4Starter : ExerciseStarter
     {
-        private readonly static Lesson4Starter _starter = new Lesson4Starter();
+        private static readonly DataProvider _dataProvider = new DataProvider(new DataProviderFactory());
+
+        private static readonly Lesson4Starter _starter = new Lesson4Starter();
 
         public static Lesson4Starter Instance => _starter;
 
@@ -27,7 +30,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
         private Lesson4Starter()
         {
             int[] array = ArraysHelper.CreateRandomValuesArray(10, -10, 10);
-            DataHelper.SaveIntoFile(array.ConvertToStrings(), PathConstants.ArrayFilePath);
+            _dataProvider.SaveIntoFile(array.ConvertToStrings(), PathConstants.ArrayFilePath);
         }
 
         private static void RunExercise2()
@@ -37,7 +40,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
                 Console.Clear();
                 try
                 {
-                    int[] array = DataHelper.LoadFromFile<string>(PathConstants.ArrayFilePath).ConvertToIntegers();
+                    int[] array = _dataProvider.LoadFromFile<string[]>(PathConstants.ArrayFilePath).ConvertToIntegers();
                     ExercisesHelper.CountPairs(array);
                     return;
                 }
@@ -54,7 +57,7 @@ namespace GeekBrainsCSharpBasics.Lesson4
 
         private static void RunExercise4()
         {
-            string[] loginData = DataHelper.LoadFromFile<string>(PathConstants.LoginDataFilePath);
+            string[] loginData = _dataProvider.LoadFromFile<string[]>(PathConstants.LoginDataFilePath);
             if (loginData.Length == 2)
             {
                 UserFormHelper.Login(new Account() { Login = loginData[0], Password = loginData[1] });

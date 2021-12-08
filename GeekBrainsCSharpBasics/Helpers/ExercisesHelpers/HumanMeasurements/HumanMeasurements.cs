@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics
 {
     [InputDescription("Для расчета ИМТ введите данные:\r\n")]
     public class HumanMeasurements : IInputData

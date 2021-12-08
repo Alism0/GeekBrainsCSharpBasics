@@ -45,18 +45,10 @@
   <ItemGroup>
     <Compile Include="Exceptions\NotNumberException.cs" />
     <Compile Include="Exceptions\NotFoundMenuItemsException.cs" />
-    <Compile Include="Exceptions\NotSupportInputDataFormatExeption.cs" />
-    <Compile Include="Exceptions\UnregisteredDataProviderTypeExeption.cs" />
-    <Compile Include="Exceptions\UnregisteredDataTypeException.cs" />
     <Compile Include="ExerciseStarter.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\Calculations\CalculationHelper.cs" />
     <Compile Include="Helpers\Calculations\Numbers\INumberValue.cs" />
-    <Compile Include="Helpers\ExercisesHelpers\LoadDataHelper.cs" />
     <Compile Include="Helpers\LoadDataExeptionHelper.cs" />
-    <Compile Include="InputData\DataProviders\DataHelper.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="InputData\DataProviders\DataProviderFactory.cs" />
     <Compile Include="Helpers\ExercisesHelpers\ExercisesHelper.cs" />
     <Compile Include="Helpers\ExercisesHelpers\PathConstants.cs" />
     <Compile Include="Helpers\FormatHelper.cs" />
@@ -64,8 +56,9 @@
     <Compile Include="Helpers\Calculations\Numbers\INumber.cs" />
     <Compile Include="Helpers\UserFormHelper.cs" />
     <Compile Include="InputData\UserForm\RegistrationForm.cs" />
+    <Compile Include="Lessons\Enums\Exercise.cs" />
+    <Compile Include="Lessons\Enums\Lesson.cs" />
     <Compile Include="Lessons\Lesson5\Exercise2\Message.cs" />
-    <Compile Include="InputData\InputDataAttributes\MenuDescriptionAttribute.cs" />
     <Compile Include="InputData\ConsoleManager.cs" />
     <Compile Include="Helpers\Calculations\Numbers\RationalNumber.cs" />
     <Compile Include="Helpers\Calculations\ArithmeticOperation.cs" />
@@ -73,15 +66,8 @@
     <Compile Include="Helpers\Calculations\Operations\NumberRangeSumOperation.cs" />
     <Compile Include="Helpers\Calculations\Operations\OperationFactory.cs" />
     <Compile Include="Helpers\Stopwatch.cs" />
-    <Compile Include="InputData\Enums\Exercise.cs" />
-    <Compile Include="InputData\Enums\Lesson.cs" />
     <Compile Include="Lessons\Lesson1\Exercise1\InputData\Human.cs" />
-    <Compile Include="InputData\InputDataModels\IInputData.cs" />
-    <Compile Include="InputData\InputDataModels\IInputDescription.cs" />
     <Compile Include="InputData\InputDataExtensions.cs" />
-    <Compile Include="InputData\InputDataAttributes\InputDescriptionAttribute.cs" />
-    <Compile Include="InputData\InputDataAttributes\InputDescriptionPropertyAttribute.cs" />
-    <Compile Include="InputData\InputDataModels\InputPropertyDescription.cs" />
     <Compile Include="Helpers\ExercisesHelpers\HumanMeasurements\HumanMeasurementsHelper.cs" />
     <Compile Include="Helpers\ExercisesHelpers\HumanMeasurements\HumanMeasurements.cs" />
     <Compile Include="InputData\Point.cs" />
@@ -110,19 +96,13 @@
     <Compile Include="Lessons\Lesson4\Helpers\CustomArrayOperation.cs" />
     <Compile Include="Lessons\Lesson4\Helpers\ArraysStarter.cs" />
     <Compile Include="Lessons\Lesson4\Lesson4Starter.cs" />
-    <Compile Include="Lessons\Lesson5\Exercise4\StudentGradeHelpers\AssessmentExtensions.cs" />
     <Compile Include="Lessons\Lesson5\Exercise4\Exeptions\CourseAssessmentExeption.cs" />
-    <Compile Include="Lessons\Lesson5\Exercise4\StudentGradeHelpers\StudentGradeParser.cs" />
-    <Compile Include="Lessons\Lesson5\Exercise4\StudentGrade.cs" />
-    <Compile Include="Lessons\Lesson5\Exercise4\CourseAssessment.cs" />
     <Compile Include="Lessons\Lesson5\Exercise4\StudentGradeExecutor.cs" />
     <Compile Include="Lessons\Lesson5\Lesson5Starter.cs" />
     <Compile Include="Lessons\Lesson5\Exercise2\MessageHelper.cs" />
     <Compile Include="Lessons\Lesson5\Exercise2\MessageOperation.cs" />
-    <Compile Include="Lessons\Lesson6\Exercise3\Student.cs" />
     <Compile Include="Lessons\Lesson6\Exercise3\StudentHelper.cs" />
     <Compile Include="Lessons\Lesson6\Exercise3\StudentOperation.cs" />
-    <Compile Include="Lessons\Lesson6\Exercise3\StudentParser.cs" />
     <Compile Include="Lessons\Lesson6\Lesson6Starter.cs" />
     <Compile Include="Lessons\Lesson6\MathFunction.cs" />
     <Compile Include="Lessons\Lesson6\MathFunctionHelper.cs" />
@@ -150,6 +130,22 @@
     <ProjectReference Include="..\GeekBrainsCSharpBasics.DataProvidersLibrary\GeekBrainsCSharpBasics.DataProvidersLibrary.csproj">
       <Project>{606f9ca0-be6b-422c-ab8e-b5691715c830}</Project>
       <Name>GeekBrainsCSharpBasics.DataProvidersLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.ExceptionsLibrary\GeekBrainsCSharpBasics.ExceptionsLibrary.csproj">
+      <Project>{edd6837e-0591-47e0-ae11-0311c1d74d79}</Project>
+      <Name>GeekBrainsCSharpBasics.ExceptionsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.Extensions\GeekBrainsCSharpBasics.ExtensionsLibrary.csproj">
+      <Project>{2b063569-4411-4253-8b16-a9fb0491e02f}</Project>
+      <Name>GeekBrainsCSharpBasics.ExtensionsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.InputData\GeekBrainsCSharpBasics.InputDataLibrary.csproj">
+      <Project>{cd49d775-7725-4a05-9198-458ccefb0d0e}</Project>
+      <Name>GeekBrainsCSharpBasics.InputDataLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.LessonsLibrary\GeekBrainsCSharpBasics.StudentsLibrary.csproj">
+      <Project>{F8FF033D-AB21-484F-9A6B-A69390510BFD}</Project>
+      <Name>GeekBrainsCSharpBasics.StudentsLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

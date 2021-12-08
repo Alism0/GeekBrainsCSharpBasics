@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GeekBrainsCSharpBasics.ExtensionsLibrary;
+using GeekBrainsCSharpBasics.InputDataLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -51,7 +53,8 @@ namespace GeekBrainsCSharpBasics
             }
 
             inputPropertyDescriptions.OrderBy(inputPropertyDescription => inputPropertyDescription.InputDescription.Order).ToList()
-                .ForEach(inputPropertyDescription => {
+                .ForEach(inputPropertyDescription =>
+                {
                     PrintDescription(inputPropertyDescription.InputDescription);
 
                     if (typeof(int) == inputPropertyDescription.Property.PropertyType)

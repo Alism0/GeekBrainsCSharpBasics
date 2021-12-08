@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson5
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics.Lesson5
 {
     public enum MessageOperation
     {

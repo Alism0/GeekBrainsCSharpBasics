@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.Abst
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.WinForms", "GeekBrainsCSharpBasics.WinForms\GeekBrainsCSharpBasics.WinForms.csproj", "{F3592D59-7B88-4068-A2FA-C5108B988AF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.InputDataLibrary", "GeekBrainsCSharpBasics.InputData\GeekBrainsCSharpBasics.InputDataLibrary.csproj", "{CD49D775-7725-4A05-9198-458CCEFB0D0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.ExtensionsLibrary", "GeekBrainsCSharpBasics.Extensions\GeekBrainsCSharpBasics.ExtensionsLibrary.csproj", "{2B063569-4411-4253-8B16-A9FB0491E02F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.ExceptionsLibrary", "GeekBrainsCSharpBasics.ExceptionsLibrary\GeekBrainsCSharpBasics.ExceptionsLibrary.csproj", "{EDD6837E-0591-47E0-AE11-0311C1D74D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekBrainsCSharpBasics.StudentsLibrary", "GeekBrainsCSharpBasics.LessonsLibrary\GeekBrainsCSharpBasics.StudentsLibrary.csproj", "{F8FF033D-AB21-484F-9A6B-A69390510BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +47,22 @@ Global
 		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3592D59-7B88-4068-A2FA-C5108B988AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD49D775-7725-4A05-9198-458CCEFB0D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD49D775-7725-4A05-9198-458CCEFB0D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD49D775-7725-4A05-9198-458CCEFB0D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD49D775-7725-4A05-9198-458CCEFB0D0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B063569-4411-4253-8B16-A9FB0491E02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B063569-4411-4253-8B16-A9FB0491E02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B063569-4411-4253-8B16-A9FB0491E02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B063569-4411-4253-8B16-A9FB0491E02F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD6837E-0591-47E0-AE11-0311C1D74D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD6837E-0591-47E0-AE11-0311C1D74D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD6837E-0591-47E0-AE11-0311C1D74D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD6837E-0591-47E0-AE11-0311C1D74D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8FF033D-AB21-484F-9A6B-A69390510BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8FF033D-AB21-484F-9A6B-A69390510BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8FF033D-AB21-484F-9A6B-A69390510BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8FF033D-AB21-484F-9A6B-A69390510BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

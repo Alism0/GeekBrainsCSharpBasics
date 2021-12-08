@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson6
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics.Lesson6
 {
     public enum StudentOperation : short
     {

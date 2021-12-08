@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GeekBrainsCSharpBasics.StudentsLibrary;
+using System;
 using System.Linq;
 
 namespace GeekBrainsCSharpBasics.Lesson5
 {
     public static class StudentGradeExecutor
     {
+        private static readonly StudentsProvider _studentsProvider = new StudentsProvider();
+
         private const int WorstScoreWinnersPlacesValue = 3;
 
         public static void CongratulateWorstScoreWinners()
@@ -36,7 +38,7 @@ namespace GeekBrainsCSharpBasics.Lesson5
             studentGrades = null;
             try
             {
-                if (!LoadDataExeptionHelper.TryLoadData(LoadDataHelper.LoadData<StudentGrade>, out StudentGrade[] data))
+                if (!LoadDataExeptionHelper.TryLoadData(() => _studentsProvider.LoadData<StudentGrade>(PathConstants.StudentAssessmentsFilePath), out StudentGrade[] data))
                     return false;
 
                 if (data.Length < 10 || data.Length > 99)

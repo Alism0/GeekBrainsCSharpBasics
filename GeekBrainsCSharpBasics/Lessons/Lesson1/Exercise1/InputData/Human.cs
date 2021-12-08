@@ -1,4 +1,6 @@
-﻿namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+
+namespace GeekBrainsCSharpBasics.Lesson1.Exercise1
 {
     [InputDescription("Ввод данных о пользователе:\r\n")]
     public class Human : Person

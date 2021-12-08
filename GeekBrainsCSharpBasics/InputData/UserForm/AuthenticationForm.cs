@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeekBrainsCSharpBasics.InputDataLibrary;
+using System;
 
 namespace GeekBrainsCSharpBasics
 {

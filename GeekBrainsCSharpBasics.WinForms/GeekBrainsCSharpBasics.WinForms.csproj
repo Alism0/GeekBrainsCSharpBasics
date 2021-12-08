@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FormExtensions.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\DataModelProviderFactory.cs" />
+    <Compile Include="Helpers\FileConverter.cs" />
+    <Compile Include="InputData\TextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputData\TextForm.Designer.cs">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\Exercise2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\Exercise2Form.Designer.cs">
+      <DependentUpon>Exercise2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\DataEngine.cs" />
+    <Compile Include="Lesson8\Exercises\Models\LogNote.cs" />
+    <Compile Include="Lesson8\Exercises\NotesLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\NotesLog.Designer.cs">
+      <DependentUpon>NotesLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\Questions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\Questions.Designer.cs">
+      <DependentUpon>Questions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson8\Lesson8MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson8\Lesson8MenuForm.Designer.cs">
+      <DependentUpon>Lesson8MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson8\Exercises\Models\Question.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputData\IInputForm.cs" />
     <Compile Include="Lesson7\Doubler.cs">
       <SubType>Form</SubType>
@@ -62,11 +106,11 @@
       <DependentUpon>NumberDetective.cs</DependentUpon>
     </Compile>
     <Compile Include="Lesson7\NumberDetectiveGame.cs" />
-    <Compile Include="Menu.cs">
+    <Compile Include="Lesson7\GamesMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Lesson7\GamesMenu.Designer.cs">
+      <DependentUpon>GamesMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="InputData\IntInput.cs.cs">
       <SubType>Form</SubType>
@@ -74,8 +118,27 @@
     <Compile Include="InputData\IntInput.cs.Designer.cs">
       <DependentUpon>IntInput.cs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FormFileProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InputData\TextForm.resx">
+      <DependentUpon>TextForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson8\Exercises\Exercise2Form.resx">
+      <DependentUpon>Exercise2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson8\Exercises\NotesLog.resx">
+      <DependentUpon>NotesLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson8\Exercises\Questions.resx">
+      <DependentUpon>Questions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lesson8\Lesson8MenuForm.resx">
+      <DependentUpon>Lesson8MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputData\IntInput.cs.resx">
       <DependentUpon>IntInput.cs.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,8 +148,8 @@
     <EmbeddedResource Include="Lesson7\NumberDetective.resx">
       <DependentUpon>NumberDetective.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Lesson7\GamesMenu.resx">
+      <DependentUpon>GamesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +172,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.AbstractsLibrary\GeekBrainsCSharpBasics.AbstractsLibrary.csproj">
+      <Project>{D343DA53-1819-4215-84FD-C4E2191521C5}</Project>
+      <Name>GeekBrainsCSharpBasics.AbstractsLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.DataProvidersLibrary\GeekBrainsCSharpBasics.DataProvidersLibrary.csproj">
+      <Project>{606f9ca0-be6b-422c-ab8e-b5691715c830}</Project>
+      <Name>GeekBrainsCSharpBasics.DataProvidersLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.InputData\GeekBrainsCSharpBasics.InputDataLibrary.csproj">
+      <Project>{CD49D775-7725-4A05-9198-458CCEFB0D0E}</Project>
+      <Name>GeekBrainsCSharpBasics.InputDataLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeekBrainsCSharpBasics.LessonsLibrary\GeekBrainsCSharpBasics.StudentsLibrary.csproj">
+      <Project>{F8FF033D-AB21-484F-9A6B-A69390510BFD}</Project>
+      <Name>GeekBrainsCSharpBasics.StudentsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
